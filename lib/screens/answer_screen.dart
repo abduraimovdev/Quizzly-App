@@ -4,6 +4,7 @@ import 'package:quizzly/controllers/answer_controller.dart';
 import 'package:quizzly/models/quiz_model.dart';
 import 'package:quizzly/services/constants/colors.dart';
 import 'package:quizzly/services/constants/strings.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 import 'package:quizzly/views/answer_widget/asnwer_stats.dart';
 import 'package:quizzly/views/answer_widget/score_widget.dart';
 import 'package:quizzly/views/app_routes.dart';
@@ -23,6 +24,7 @@ class AnswerScreen extends StatefulWidget {
 }
 
 class _AnswerScreenState extends State<AnswerScreen> {
+  late final AppLocalizations l10n;
   late final AnswerController controller;
   late final ConfettiController aniController;
 
@@ -31,7 +33,7 @@ class _AnswerScreenState extends State<AnswerScreen> {
     // TODO: implement initState
 
     controller = AnswerController(updater: setState);
-    aniController = ConfettiController(duration: const Duration(seconds: 3));
+    aniController = ConfettiController(duration: const Duration(seconds: 3), );
     aniController.play();
     super.initState();
   }
@@ -39,6 +41,7 @@ class _AnswerScreenState extends State<AnswerScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    controller.appLocalization(context);
     controller.answers =
         ModalRoute.of(context)!.settings.arguments as List<Quiz>;
   }
@@ -51,9 +54,10 @@ class _AnswerScreenState extends State<AnswerScreen> {
         subChild: Align(
           alignment: Alignment.topCenter,
           child: ConfettiWidget(
+          numberOfParticles: 1000,
             confettiController: aniController,
             blastDirection: pi / 2,
-            gravity: 0.01,
+            gravity: 0.15,
             colors: [
               AppColors.c1F8435,
               AppColors.cFA3939,
@@ -85,13 +89,13 @@ class _AnswerScreenState extends State<AnswerScreen> {
                     ///
                     AnswerButton(
                       onPress: () => controller.tryAgain(context),
-                      label: Strings.play.text,
+                      label: controller.l10n.play,
                     ),
 
                     ///
                     AnswerButton(
                       onPress: () => controller.gotoIntro(context),
-                      label: Strings.home.text,
+                      label: controller.l10n.home,
                     ),
                   ],
                 ),

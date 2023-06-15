@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quizzly/controllers/quiz_controller.dart';
@@ -49,7 +51,7 @@ class _QuizStatState extends State<QuizStat> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Question ${(widget.controller.currentQuiz + 1).toString().padLeft(2, "0")}/${widget.controller.dataQuiz.length}",
+                    "${widget.controller.l10n.question} ${(widget.controller.currentQuiz + 1).toString().padLeft(2, "0")}/${widget.controller.dataQuiz.length}",
                     style: AppTextStyles.dmsans14.copyWith(
                       color: AppColors.cAC00D7,
                     ),

@@ -4,6 +4,7 @@ import 'package:quizzly/controllers/answer_controller.dart';
 import 'package:quizzly/services/constants/colors.dart';
 import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 
 class ScoreWidget extends StatelessWidget {
   final AnswerController controller;
@@ -15,6 +16,7 @@ class ScoreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       width: 175,
       height: 175,
@@ -43,7 +45,7 @@ class ScoreWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                Strings.score.text,
+               controller.l10n.score,
                 style: AppTextStyles.dmsans20.copyWith(
                   color: AppColors.cA42FC1,
                 ),

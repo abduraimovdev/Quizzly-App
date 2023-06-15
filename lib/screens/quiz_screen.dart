@@ -31,10 +31,12 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
+
     List<Quiz> quizData =
         ModalRoute.of(context)!.settings.arguments as List<Quiz>;
     controller.dataQuiz = quizData;
     controller.quiz = quizData[0];
+    controller.appLocalization(context);
     super.didChangeDependencies();
   }
 

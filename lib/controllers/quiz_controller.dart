@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quizzly/models/quiz_model.dart';
 import 'package:quizzly/screens/answer_screen.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 
 class QuizController {
   /// This is Fields
@@ -25,6 +26,14 @@ class QuizController {
 
   /// This is Constructor
   QuizController({required this.updater});
+
+
+  late final AppLocalizations l10n;
+
+
+  void appLocalization(BuildContext context) {
+    l10n = AppLocalizations.of(context);
+  }
 
   /// Methods
   void changeQuiz(num? newAnswer, BuildContext context) {

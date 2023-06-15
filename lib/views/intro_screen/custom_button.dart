@@ -3,6 +3,7 @@ import 'package:quizzly/controllers/intro_controller.dart';
 import 'package:quizzly/services/constants/colors.dart';
 import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 
 class CustomButton extends StatefulWidget {
   final IntroController controller;
@@ -13,6 +14,15 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
+  late final AppLocalizations l10n;
+
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    l10n = AppLocalizations.of(context);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +41,7 @@ class _CustomButtonState extends State<CustomButton> {
                 border: Border.all(width: 2, color: AppColors.cFFFFFF),
               ),
               child: Text(
-                Strings.level1.text,
+                l10n.level1,
                 style:
                     AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
               ),
@@ -52,7 +62,7 @@ class _CustomButtonState extends State<CustomButton> {
                 border: Border.all(width: 2, color: AppColors.cFFFFFF),
               ),
               child: Text(
-                Strings.level2.text,
+                l10n.level2,
                 style:
                     AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
               ),
@@ -73,7 +83,7 @@ class _CustomButtonState extends State<CustomButton> {
                 border: Border.all(width: 2, color: AppColors.cFFFFFF),
               ),
               child: Text(
-                Strings.level3.text,
+                l10n.level3,
                 style:
                     AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
               ),

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:quizzly/services/constants/colors.dart';
 import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 class CustomWelcomeToQuizzly extends StatelessWidget {
   const CustomWelcomeToQuizzly({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return   Padding(
       padding: const EdgeInsets.only(left: 25, right: 25),
       child: Container(
@@ -21,13 +23,13 @@ class CustomWelcomeToQuizzly extends StatelessWidget {
           children: [
             const Spacer(flex: 3),
             Text(
-              Strings.welcome.text,
+             l10n.welcome,
               style: AppTextStyles.dmsans28
                   .copyWith(color: AppColors.cAC00D7),
             ),
             const Spacer(flex: 1),
             Text(
-              Strings.withs.text,
+             l10n.withs,
               textAlign: TextAlign.center,
               style: AppTextStyles.dmsans22
                   .copyWith(color: AppColors.cAC00D7),

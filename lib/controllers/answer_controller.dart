@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quizzly/controllers/intro_controller.dart';
 import 'package:quizzly/models/quiz_model.dart';
+import 'package:quizzly/services/l10n/app_localizations.dart';
 import 'package:quizzly/views/app_routes.dart';
 
 class AnswerController {
@@ -10,6 +11,13 @@ class AnswerController {
 
   /// Constructor
   AnswerController({required this.updater});
+
+  late final AppLocalizations l10n;
+
+
+  void appLocalization(BuildContext context) {
+    l10n = AppLocalizations.of(context);
+  }
 
 
   /// This is Getters
