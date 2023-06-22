@@ -1,10 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:quizzly/controllers/quiz_controller.dart';
 import 'package:quizzly/services/constants/colors.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly/services/extention/localization_ext.dart';
 import 'package:quizzly/views/quiz_widget/timer.dart';
 
 class QuizStat extends StatefulWidget {
@@ -51,7 +49,7 @@ class _QuizStatState extends State<QuizStat> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "${widget.controller.l10n.question} ${(widget.controller.currentQuiz + 1).toString().padLeft(2, "0")}/${widget.controller.dataQuiz.length}",
+                    "${context.lang.question} ${(widget.controller.currentQuiz + 1).toString().padLeft(2, "0")}/${widget.controller.dataQuiz.length}",
                     style: AppTextStyles.dmsans14.copyWith(
                       color: AppColors.cAC00D7,
                     ),

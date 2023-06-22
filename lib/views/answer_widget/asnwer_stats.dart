@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quizzly/controllers/answer_controller.dart';
 import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
+import 'package:quizzly/services/extention/localization_ext.dart';
 
 
 
@@ -17,7 +16,6 @@ class AnswerStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     return Container(
       width: MediaQuery.of(context).size.width * .8,
       height: 150,
@@ -82,9 +80,9 @@ class AnswerStats extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 40),
-              Text(controller.l10n.correct, style: AppTextStyles.dmsans16,),
+              Text(context.lang.correct, style: AppTextStyles.dmsans16,),
               const SizedBox(width: 10),
-              Text(controller.l10n.wrong, style: AppTextStyles.dmsans16,),
+              Text(context.lang.wrong, style: AppTextStyles.dmsans16,),
               const SizedBox(),
             ],
           )

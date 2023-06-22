@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly/services/extention/localization_ext.dart';
 import 'package:quizzly/services/l10n/app_localizations.dart';
 
 class BottomSheetWidget extends StatelessWidget {
@@ -11,8 +11,8 @@ class BottomSheetWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
     return BottomSheet(
+      enableDrag: false,
       onClosing: () {},
       builder: (context) => Container(
         width: double.infinity,
@@ -28,7 +28,7 @@ class BottomSheetWidget extends StatelessWidget {
         child: Column(
           children: [
             Text(
-             l10n.quizzly,
+             context.lang.quizzly,
               style: AppTextStyles.dmsans20.copyWith(
                 color: AppColors.cFFFFFF,
               ),

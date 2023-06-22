@@ -6,7 +6,6 @@ import 'package:quizzly/views/quiz_widget/answer_button.dart';
 import 'package:quizzly/views/quiz_widget/back_button.dart';
 import 'package:quizzly/views/quiz_widget/body_widget.dart';
 import 'package:quizzly/views/quiz_widget/bottom_sheet_widget.dart';
-
 import 'package:quizzly/views/quiz_widget/quiz_stats.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -31,12 +30,10 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
-
     List<Quiz> quizData =
         ModalRoute.of(context)!.settings.arguments as List<Quiz>;
     controller.dataQuiz = quizData;
     controller.quiz = quizData[0];
-    controller.appLocalization(context);
     super.didChangeDependencies();
   }
 
@@ -81,7 +78,6 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ),
       ),
-
       /// This is Bottom Sheet
       bottomSheet: const BottomSheetWidget(),
     );

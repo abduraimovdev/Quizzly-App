@@ -12,7 +12,7 @@
 //   play('Play again'),
 //   home('Home'),
 //   score('Your Score');
-//   constcontroller.l10n.this);
+//   constcontext.lang.this);
 //
 //   final String text;
 // }

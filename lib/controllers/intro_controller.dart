@@ -1,17 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:quizzly/screens/quiz_screen.dart';
 import 'package:quizzly/services/data/database/quizzly.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
 
 class IntroController {
   /// Fields
   void Function(void Function() fn) updater;
-  late final AppLocalizations l10n;
 
-
-  void appLocalization(BuildContext context) {
-    l10n = AppLocalizations.of(context);
-  }
 
   /// Constructor
   IntroController({required this.updater});

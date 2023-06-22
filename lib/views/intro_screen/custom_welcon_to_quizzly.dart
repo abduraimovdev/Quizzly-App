@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/strings.dart';
 import 'package:quizzly/services/constants/text_styles.dart';
 import 'package:quizzly/services/l10n/app_localizations.dart';
 class CustomWelcomeToQuizzly extends StatelessWidget {

@@ -13,10 +13,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  #  For Animation Confetti
   confetti: ^0.7.0
+  # For Country Flags
+  circle_flags: ^1.0.4
+  # For Save Memory
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  # For Languages Localizations
+  intl: ^0.18.0
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.0
+  avatar_glow: ^2.0.2
 
 dev_dependencies:
   flutter_test:

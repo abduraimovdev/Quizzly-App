@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quizzly/controllers/answer_controller.dart';
 import 'package:quizzly/models/quiz_model.dart';
 import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/strings.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
+import 'package:quizzly/services/extention/localization_ext.dart';
 import 'package:quizzly/views/answer_widget/asnwer_stats.dart';
 import 'package:quizzly/views/answer_widget/score_widget.dart';
 import 'package:quizzly/views/app_routes.dart';
@@ -24,14 +23,11 @@ class AnswerScreen extends StatefulWidget {
 }
 
 class _AnswerScreenState extends State<AnswerScreen> {
-  late final AppLocalizations l10n;
   late final AnswerController controller;
   late final ConfettiController aniController;
 
   @override
   void initState() {
-    // TODO: implement initState
-
     controller = AnswerController(updater: setState);
     aniController = ConfettiController(duration: const Duration(seconds: 3), );
     aniController.play();
@@ -41,11 +37,9 @@ class _AnswerScreenState extends State<AnswerScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    controller.appLocalization(context);
     controller.answers =
         ModalRoute.of(context)!.settings.arguments as List<Quiz>;
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,15 +47,24 @@ class _AnswerScreenState extends State<AnswerScreen> {
         height: MediaQuery.of(context).size.height * .45,
         subChild: Align(
           alignment: Alignment.topCenter,
-          child: ConfettiWidget(
-          numberOfParticles: 1000,
+          child: controller.yourScore > 50 ? ConfettiWidget(
+          numberOfParticles: 50,
+            confettiController: aniController,
+            blastDirection: pi / 2,
+            gravity: 0.1,
+            colors: [
+              AppColors.c1F8435,
+              AppColors.cD014FF,
+            ],
+          ) : ConfettiWidget(
+            numberOfParticles: 50,
             confettiController: aniController,
             blastDirection: pi / 2,
             gravity: 0.15,
             colors: [
-              AppColors.c1F8435,
               AppColors.cFA3939,
-              AppColors.cFBECFF,
+              AppColors.cD014FF,
+
             ],
           ),
         ),
@@ -80,7 +83,6 @@ class _AnswerScreenState extends State<AnswerScreen> {
 
                     ///
                     ScoreWidget(controller: controller),
-                    const SizedBox(height: 30),
 
                     ///
                     AnswerStats(controller: controller),
@@ -89,13 +91,13 @@ class _AnswerScreenState extends State<AnswerScreen> {
                     ///
                     AnswerButton(
                       onPress: () => controller.tryAgain(context),
-                      label: controller.l10n.play,
+                      label: context.lang.play,
                     ),
 
                     ///
                     AnswerButton(
                       onPress: () => controller.gotoIntro(context),
-                      label: controller.l10n.home,
+                      label: context.lang.home,
                     ),
                   ],
                 ),
