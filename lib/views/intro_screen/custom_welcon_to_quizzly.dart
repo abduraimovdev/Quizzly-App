@@ -23,6 +23,7 @@ class CustomWelcomeToQuizzly extends StatelessWidget {
             const Spacer(flex: 3),
             Text(
              l10n.welcome,
+              textAlign: TextAlign.center,
               style: AppTextStyles.dmsans28
                   .copyWith(color: AppColors.cAC00D7),
             ),
