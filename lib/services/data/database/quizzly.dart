@@ -7,12 +7,12 @@ sealed class QuizData {
     for (int i = 0; i < 10; i++) {
       operators.shuffle();
       String operator = operators[0];
-      int intOne = Random().nextInt(5) + 1;
-      int intTwo = Random().nextInt(5) + 1;
-      num trueanswer = operator == '+' ? intOne + intTwo : (operator == '-'
-          ? intOne - intTwo
-          : (operator == '*' ? intOne * intTwo : intOne / intTwo));
-      List<num> answer = [
+      int numOne = Random().nextInt(5) + 1;
+      int numTwo = Random().nextInt(5) + 1;
+      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
+          ? numOne - numTwo
+          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      List<int> answer = [
         trueanswer,
         Random().nextInt(25) + 1,
         Random().nextInt(25) + 1,
@@ -22,8 +22,8 @@ sealed class QuizData {
       result.add(
         Quiz(
           operator: operators[0],
-          numOne: intOne,
-          numTwo: intTwo,
+          numOne: numOne,
+          numTwo: numTwo,
           answers: answer,
           trueAnswer: trueanswer,
           second: 1000,
@@ -40,12 +40,12 @@ sealed class QuizData {
     for (int i = 0; i < 10; i++) {
       operators.shuffle();
       String operator = operators[0];
-      int intOne = Random().nextInt(10) + 1;
-      int intTwo = Random().nextInt(10) + 1;
-      num trueanswer = operator == '+' ? intOne + intTwo : (operator == '-'
-          ? intOne - intTwo
-          : (operator == '*' ? intOne * intTwo : intOne / intTwo));
-      List<num> answer = [
+      int numOne = Random().nextInt(10) + 1;
+      int numTwo = Random().nextInt(10) + 1;
+      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
+          ? numOne - numTwo
+          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      List<int> answer = [
         trueanswer,
         Random().nextInt(100) + 1,
         Random().nextInt(100) + 1,
@@ -55,8 +55,8 @@ sealed class QuizData {
       result.add(
         Quiz(
           operator: operators[0],
-          numOne: intOne,
-          numTwo: intTwo,
+          numOne: numOne,
+          numTwo: numTwo,
           answers: answer,
           trueAnswer: trueanswer,
           second: 20,
@@ -72,12 +72,12 @@ sealed class QuizData {
     for (int i = 0; i < 10; i++) {
       operators.shuffle();
       String operator = operators[0];
-      int intOne = Random().nextInt(20) + 1;
-      int intTwo = Random().nextInt(20) + 1;
-      num trueanswer = operator == '+' ? intOne + intTwo : (operator == '-'
-          ? intOne - intTwo
-          : (operator == '*' ? intOne * intTwo : intOne / intTwo));
-      List<num> answer = [
+      int numOne = Random().nextInt(20) + 1;
+      int numTwo = Random().nextInt(20) + 1;
+      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
+          ? numOne - numTwo
+          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      List<int> answer = [
         trueanswer,
         Random().nextInt(400) + 1,
         Random().nextInt(400) + 1,
@@ -87,8 +87,8 @@ sealed class QuizData {
       result.add(
         Quiz(
           operator: operators[0],
-          numOne: intOne,
-          numTwo: intTwo,
+          numOne: numOne,
+          numTwo: numTwo,
           answers: answer,
           trueAnswer: trueanswer,
           second: 10,
