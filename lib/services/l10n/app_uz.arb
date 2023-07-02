@@ -1,7 +1,7 @@
 {
   "quizzly" : "QUIZZLY",
   "welcome" : "Quizzly ga Xush kelibsiz!",
-  "withs" : "Quizzly yordamida siz fikrlash, aql va mantiqiy ko'nikmalaringizni yaxshilashingiz mumkin.",
+  "withs" : "Quizzly yordamida siz fikrlash, aqliy va mantiqiy ko'nikmalaringizni yaxshilashingiz mumkin.",
   "choose" : "Bosqichni tanlang",
   "level1" : "1- Bosqich",
   "level2" : "2- Bosqich",
@@ -10,7 +10,7 @@
   "correct" : "To'g'ri",
   "wrong" : "Xato",
   "play" : "Qayta o'ynash",
-  "home" : "Asosiga",
+  "home" : "Asosiyga",
   "score" : "Natijangiz",
   "question" : "Savollar"
 }
