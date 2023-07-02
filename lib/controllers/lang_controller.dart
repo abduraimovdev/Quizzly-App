@@ -8,5 +8,17 @@ class LangController {
   }
   static Box langBox = Hive.box("settings");
   static ValueNotifier<String> currentLang = ValueNotifier(langBox.get("currentLang", defaultValue: "uz"));
+  static List<String> languages = [
+    "uz",
+    "us",
+    "ru",
+  ];
+
+
+  static void changeLang(newLang) {
+    LangController.currentLang.value = newLang!;
+    langBox.put("currentLang", newLang);
+  }
+
 
 }
