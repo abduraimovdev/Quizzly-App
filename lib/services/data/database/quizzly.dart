@@ -1,5 +1,6 @@
 import 'dart:math';
-import 'package:quizzly/models/quiz_model.dart';
+import 'package:quizzly_math/models/quiz_model.dart';
+
 sealed class QuizData {
   static List<Quiz> levelOne() {
     List<Quiz> result = [];
@@ -9,14 +10,16 @@ sealed class QuizData {
       String operator = operators[0];
       int numOne = Random().nextInt(5) + 1;
       int numTwo = Random().nextInt(5) + 1;
-      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
-          ? numOne - numTwo
-          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      int trueanswer = operator == '+'
+          ? numOne + numTwo
+          : (operator == '-'
+                ? numOne - numTwo
+                : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
       List<int> answer = [
         trueanswer,
         Random().nextInt(25) + 1,
         Random().nextInt(25) + 1,
-        Random().nextInt(25) + 1
+        Random().nextInt(25) + 1,
       ];
       answer.shuffle();
       result.add(
@@ -33,7 +36,6 @@ sealed class QuizData {
     return result;
   }
 
-
   static List<Quiz> levelTwo() {
     List<Quiz> result = [];
     List<String> operators = ['+', '-', '*', '/'];
@@ -42,14 +44,16 @@ sealed class QuizData {
       String operator = operators[0];
       int numOne = Random().nextInt(10) + 1;
       int numTwo = Random().nextInt(10) + 1;
-      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
-          ? numOne - numTwo
-          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      int trueanswer = operator == '+'
+          ? numOne + numTwo
+          : (operator == '-'
+                ? numOne - numTwo
+                : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
       List<int> answer = [
         trueanswer,
         Random().nextInt(100) + 1,
         Random().nextInt(100) + 1,
-        Random().nextInt(100) + 1
+        Random().nextInt(100) + 1,
       ];
       answer.shuffle();
       result.add(
@@ -74,9 +78,11 @@ sealed class QuizData {
       String operator = operators[0];
       int numOne = Random().nextInt(20) + 1;
       int numTwo = Random().nextInt(20) + 1;
-      int trueanswer = operator == '+' ? numOne + numTwo : (operator == '-'
-          ? numOne - numTwo
-          : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
+      int trueanswer = operator == '+'
+          ? numOne + numTwo
+          : (operator == '-'
+                ? numOne - numTwo
+                : (operator == '*' ? numOne * numTwo : numOne ~/ numTwo));
       List<int> answer = [
         trueanswer,
         Random().nextInt(400) + 1,

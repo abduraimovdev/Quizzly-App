@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
 
 class AnswerButton extends StatelessWidget {
-  const AnswerButton({
-    super.key,
-    required this.onPress,
-    required this.label,
-  });
+  const AnswerButton({super.key, required this.onPress, required this.label});
 
   final String label;
   final void Function() onPress;
@@ -22,10 +18,7 @@ class AnswerButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: AppColors.cA42FC1,
-            width: 2,
-          ),
+          border: Border.all(color: AppColors.cA42FC1, width: 2),
         ),
         child: Text(
           label,

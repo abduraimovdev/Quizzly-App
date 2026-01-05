@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizzly/controllers/intro_controller.dart';
-import 'package:quizzly/models/quiz_model.dart';
-import 'package:quizzly/views/app_routes.dart';
+import 'package:quizzly_math/controllers/intro_controller.dart';
+import 'package:quizzly_math/models/quiz_model.dart';
+import 'package:quizzly_math/views/app_routes.dart';
 
 class AnswerController {
   /// Fields

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:quizzly/controllers/lang_controller.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
-import 'package:quizzly/views/app_routes.dart';
+import 'package:quizzly_math/controllers/lang_controller.dart';
+import 'package:quizzly_math/services/l10n/app_localizations.dart';
+import 'package:quizzly_math/views/app_routes.dart';
 
 class RunApp extends StatelessWidget {
   const RunApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return ValueListenableBuilder(
       valueListenable: LangController.currentLang,
       builder: (context, lang, _) {
@@ -24,14 +23,10 @@ class RunApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: const [
-            Locale('en'),
-            Locale('uz'),
-            Locale('ru'),
-          ],
+          supportedLocales: const [Locale('en'), Locale('uz'), Locale('ru')],
           locale: Locale(lang),
         );
-      }
+      },
     );
   }
 }

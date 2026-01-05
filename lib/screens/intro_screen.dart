@@ -1,17 +1,17 @@
 import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/material.dart';
-import 'package:quizzly/controllers/intro_controller.dart';
-import 'package:quizzly/controllers/lang_controller.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/extention/localization_ext.dart';
-import 'package:quizzly/views/intro_screen/custom_button.dart';
-import 'package:quizzly/views/intro_screen/custom_welcon_to_quizzly.dart';
+import 'package:quizzly_math/controllers/intro_controller.dart';
+import 'package:quizzly_math/controllers/lang_controller.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/extention/localization_ext.dart';
+import 'package:quizzly_math/views/intro_screen/custom_button.dart';
+import 'package:quizzly_math/views/intro_screen/custom_welcon_to_quizzly.dart';
 
 class IntroScreen extends StatefulWidget {
   static const id = "/intro";
 
-  const IntroScreen({Key? key}) : super(key: key);
+  const IntroScreen({super.key});
 
   @override
   State<IntroScreen> createState() => _IntroScreenState();
@@ -22,7 +22,6 @@ class _IntroScreenState extends State<IntroScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     controller = IntroController(updater: setState);
     super.initState();
   }
@@ -41,40 +40,40 @@ class _IntroScreenState extends State<IntroScreen> {
               fit: BoxFit.cover,
             ),
           ),
-
-          ///
           child: Column(
             children: [
               const Spacer(flex: 3),
               Align(
                 alignment: const Alignment(0.9, 0),
                 child: ValueListenableBuilder(
-                    valueListenable: LangController.currentLang,
-                    builder: (context, lang, _) {
-                      return DropdownButton(
-                        dropdownColor: Colors.black.withOpacity(0.4),
-                        enableFeedback: false,
-                        style: const TextStyle(color: Colors.white),
-                        value: lang,
-                        items: LangController.languages
-                            .map(
-                              (e) => DropdownMenuItem(
-                                value: e,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    CircleFlag(e, size: 20),
-                                    const SizedBox(width: 10),
-                                    Text((e == "us" ? "en" : e).toUpperCase()),
-                                  ],
-                                ),
+                  valueListenable: LangController.currentLang,
+                  builder: (context, lang, _) {
+                    return DropdownButton(
+                      dropdownColor: Colors.black.withOpacity(0.4),
+                      enableFeedback: false,
+                      style: const TextStyle(color: Colors.white),
+                      value: lang,
+                      items: LangController.languages
+                          .map(
+                            (e) => DropdownMenuItem(
+                              value: e,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CircleFlag(e, size: 20),
+                                  const SizedBox(width: 10),
+                                  Text((e == "us" ? "en" : e).toUpperCase()),
+                                ],
                               ),
-                            ).toList(),// End Map
+                            ),
+                          )
+                          .toList(), // End Map
 
-                        onChanged: LangController.changeLang,
-                      );
-                    }),
+                      onChanged: LangController.changeLang,
+                    );
+                  },
+                ),
               ),
               const Spacer(flex: 1),
               Text(
@@ -92,8 +91,9 @@ class _IntroScreenState extends State<IntroScreen> {
               const Spacer(flex: 5),
               Text(
                 context.lang.choose,
-                style:
-                    AppTextStyles.dmsans24.copyWith(color: AppColors.cFFFFFF),
+                style: AppTextStyles.dmsans24.copyWith(
+                  color: AppColors.cFFFFFF,
+                ),
               ),
 
               ///

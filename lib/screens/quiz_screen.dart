@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:quizzly/controllers/quiz_controller.dart';
-import 'package:quizzly/models/quiz_model.dart';
-import 'package:quizzly/views/app_routes.dart';
-import 'package:quizzly/views/quiz_widget/answer_button.dart';
-import 'package:quizzly/views/quiz_widget/back_button.dart';
-import 'package:quizzly/views/quiz_widget/body_widget.dart';
-import 'package:quizzly/views/quiz_widget/bottom_sheet_widget.dart';
-import 'package:quizzly/views/quiz_widget/quiz_stats.dart';
+import 'package:quizzly_math/controllers/quiz_controller.dart';
+import 'package:quizzly_math/models/quiz_model.dart';
+import 'package:quizzly_math/views/app_routes.dart';
+import 'package:quizzly_math/views/quiz_widget/answer_button.dart';
+import 'package:quizzly_math/views/quiz_widget/back_button.dart';
+import 'package:quizzly_math/views/quiz_widget/body_widget.dart';
+import 'package:quizzly_math/views/quiz_widget/bottom_sheet_widget.dart';
+import 'package:quizzly_math/views/quiz_widget/quiz_stats.dart';
 
 class QuizScreen extends StatefulWidget {
   static const String id = "/quiz";
 
-  const QuizScreen({Key? key}) : super(key: key);
+  const QuizScreen({super.key});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -22,14 +22,12 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     controller = QuizController(updater: setState);
     super.initState();
   }
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     List<Quiz> quizData =
         ModalRoute.of(context)!.settings.arguments as List<Quiz>;
     controller.dataQuiz = quizData;
@@ -48,9 +46,7 @@ class _QuizScreenState extends State<QuizScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /// This is Back Button on Go To IntroScreen
-                AppBackButton(
-                  onPress: () => AppRoutes.goToIntro(context),
-                ),
+                AppBackButton(onPress: () => AppRoutes.goToIntro(context)),
 
                 /// This is Quiz Info's
                 QuizStat(controller: controller),
@@ -63,11 +59,12 @@ class _QuizScreenState extends State<QuizScreen> {
                     children: [
                       /// This is for in Answer Buttons
                       for (int i = 0; i < controller.quiz.answers.length; i++)
-
                         /// Custom Button
                         AnswerButton(
                           onPress: () => controller.changeQuiz(
-                              controller.quiz.answers[i], context),
+                            controller.quiz.answers[i],
+                            context,
+                          ),
                           label: "${controller.quiz.answers[i]}",
                         ),
                     ],
@@ -78,6 +75,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ),
       ),
+
       /// This is Bottom Sheet
       bottomSheet: const BottomSheetWidget(),
     );

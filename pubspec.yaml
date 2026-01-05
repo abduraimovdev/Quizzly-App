@@ -1,4 +1,4 @@
-name: quizzly
+name: quizzly_math
 description: This is Quiz App In Math
 
 publish_to: 'none'
@@ -6,31 +6,27 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.1 <4.0.0'
+  sdk: ^3.10.4
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  #  For Animation Confetti
-  confetti: ^0.7.0
-  # For Country Flags
-  circle_flags: ^1.0.4
-  # For Save Memory
+  cupertino_icons: ^1.0.8
+  confetti: ^0.8.0
+  circle_flags: ^5.0.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  # For Languages Localizations
-  intl: ^0.18.0
+  intl: ^0.20.2
   flutter_localizations:
     sdk: flutter
-  avatar_glow: ^2.0.2
+  avatar_glow: ^3.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
 

@@ -1,6 +1,6 @@
-# quizzly
+# quizzly_math
 
-This is Quiz App In Math
+A new Flutter project.
 
 ## Getting Started
 

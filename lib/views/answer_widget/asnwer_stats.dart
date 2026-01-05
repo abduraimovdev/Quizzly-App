@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:quizzly/controllers/answer_controller.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/extention/localization_ext.dart';
-
-
+import 'package:quizzly_math/controllers/answer_controller.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/extention/localization_ext.dart';
 
 class AnswerStats extends StatelessWidget {
-  const AnswerStats({
-    super.key,
-    required this.controller,
-  });
+  const AnswerStats({super.key, required this.controller});
 
   final AnswerController controller;
 
@@ -80,12 +75,12 @@ class AnswerStats extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 40),
-              Text(context.lang.correct, style: AppTextStyles.dmsans16,),
+              Text(context.lang.correct, style: AppTextStyles.dmsans16),
               const SizedBox(width: 10),
-              Text(context.lang.wrong, style: AppTextStyles.dmsans16,),
+              Text(context.lang.wrong, style: AppTextStyles.dmsans16),
               const SizedBox(),
             ],
-          )
+          ),
         ],
       ),
     );

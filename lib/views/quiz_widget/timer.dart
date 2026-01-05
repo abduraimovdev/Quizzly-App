@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quizzly/controllers/quiz_controller.dart';
-import 'package:quizzly/views/quiz_widget/painter.dart';
+import 'package:quizzly_math/controllers/quiz_controller.dart';
+import 'package:quizzly_math/views/quiz_widget/painter.dart';
 
 class TimerSeconds extends StatefulWidget {
   final Color color;
@@ -35,12 +35,11 @@ class _TimerSecondsState extends State<TimerSeconds>
       duration: Duration(seconds: widget.second),
     );
     widget.controller.animationController = controller;
-    controller.reverse(
-      from: controller.value == 0.0 ? 1.0 : controller.value,
+    controller.reverse(from: controller.value == 0.0 ? 1.0 : controller.value);
+    controller.addStatusListener(
+      (status) => widget.controller.changer(status, context),
     );
-    controller.addStatusListener( (status) => widget.controller.changer(status, context));
   }
-
 
   @override
   Widget build(BuildContext context) {

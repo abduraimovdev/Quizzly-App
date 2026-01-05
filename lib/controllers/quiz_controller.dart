@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizzly/models/quiz_model.dart';
-import 'package:quizzly/screens/answer_screen.dart';
+import 'package:quizzly_math/models/quiz_model.dart';
+import 'package:quizzly_math/screens/answer_screen.dart';
 
 class QuizController {
   /// This is Fields
@@ -26,15 +26,15 @@ class QuizController {
   /// This is Constructor
   QuizController({required this.updater});
 
-
   /// Methods
   void changeQuiz(num? newAnswer, BuildContext context) {
     /// Next Quiz For ++
     currentQuiz++;
 
     /// This is Quiz Answer
-    quiz.answer =
-        newAnswer == null ? 0 : (newAnswer == quiz.trueAnswer ? 1 : 2);
+    quiz.answer = newAnswer == null
+        ? 0
+        : (newAnswer == quiz.trueAnswer ? 1 : 2);
 
     /// Quiz End ?
     if (currentQuiz >= dataQuiz.length) {
@@ -63,8 +63,9 @@ class QuizController {
       }
       isAnimate = false;
       animationController.reverse(
-        from:
-            animationController.value == 0.0 ? 1.0 : animationController.value,
+        from: animationController.value == 0.0
+            ? 1.0
+            : animationController.value,
       );
     }
   }

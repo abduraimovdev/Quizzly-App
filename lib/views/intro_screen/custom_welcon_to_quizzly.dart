@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/l10n/app_localizations.dart';
+
 class CustomWelcomeToQuizzly extends StatelessWidget {
-  const CustomWelcomeToQuizzly({Key? key}) : super(key: key);
+  const CustomWelcomeToQuizzly({super.key});
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    return   Padding(
+    return Padding(
       padding: const EdgeInsets.only(left: 25, right: 25),
       child: Container(
         height: 205,
@@ -22,17 +23,15 @@ class CustomWelcomeToQuizzly extends StatelessWidget {
           children: [
             const Spacer(flex: 3),
             Text(
-             l10n.welcome,
+              l10n.welcome,
               textAlign: TextAlign.center,
-              style: AppTextStyles.dmsans28
-                  .copyWith(color: AppColors.cAC00D7),
+              style: AppTextStyles.dmsans28.copyWith(color: AppColors.cAC00D7),
             ),
             const Spacer(flex: 1),
             Text(
-             l10n.withs,
+              l10n.withs,
               textAlign: TextAlign.center,
-              style: AppTextStyles.dmsans22
-                  .copyWith(color: AppColors.cAC00D7),
+              style: AppTextStyles.dmsans22.copyWith(color: AppColors.cAC00D7),
             ),
             const Spacer(flex: 3),
           ],

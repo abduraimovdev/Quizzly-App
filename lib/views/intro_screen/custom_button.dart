@@ -1,25 +1,18 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizzly/controllers/intro_controller.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/extention/localization_ext.dart';
+import 'package:quizzly_math/controllers/intro_controller.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/extention/localization_ext.dart';
 
 class CustomButton extends StatefulWidget {
   final IntroController controller;
-  const CustomButton({Key? key, required this.controller}) : super(key: key);
+  const CustomButton({super.key, required this.controller});
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
 }
 
 class _CustomButtonState extends State<CustomButton> {
-
-
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +33,9 @@ class _CustomButtonState extends State<CustomButton> {
               ),
               child: Text(
                 context.lang.level1,
-                style:
-                    AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
+                style: AppTextStyles.dmsans20.copyWith(
+                  color: AppColors.cFFFFFF,
+                ),
               ),
             ),
           ),
@@ -61,8 +55,9 @@ class _CustomButtonState extends State<CustomButton> {
               ),
               child: Text(
                 context.lang.level2,
-                style:
-                    AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
+                style: AppTextStyles.dmsans20.copyWith(
+                  color: AppColors.cFFFFFF,
+                ),
               ),
             ),
           ),
@@ -82,8 +77,9 @@ class _CustomButtonState extends State<CustomButton> {
               ),
               child: Text(
                 context.lang.level3,
-                style:
-                    AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
+                style: AppTextStyles.dmsans20.copyWith(
+                  color: AppColors.cFFFFFF,
+                ),
               ),
             ),
           ),

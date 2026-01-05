@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/extention/localization_ext.dart';
-import 'package:quizzly/services/l10n/app_localizations.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/extention/localization_ext.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  const BottomSheetWidget({
-    super.key,
-  });
+  const BottomSheetWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +25,8 @@ class BottomSheetWidget extends StatelessWidget {
         child: Column(
           children: [
             Text(
-             context.lang.quizzly,
-              style: AppTextStyles.dmsans20.copyWith(
-                color: AppColors.cFFFFFF,
-              ),
+              context.lang.quizzly,
+              style: AppTextStyles.dmsans20.copyWith(color: AppColors.cFFFFFF),
             ),
           ],
         ),

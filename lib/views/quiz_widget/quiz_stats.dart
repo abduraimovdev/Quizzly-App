@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:quizzly/controllers/quiz_controller.dart';
-import 'package:quizzly/services/constants/colors.dart';
-import 'package:quizzly/services/constants/text_styles.dart';
-import 'package:quizzly/services/extention/localization_ext.dart';
-import 'package:quizzly/views/quiz_widget/timer.dart';
+import 'package:quizzly_math/controllers/quiz_controller.dart';
+import 'package:quizzly_math/services/constants/colors.dart';
+import 'package:quizzly_math/services/constants/text_styles.dart';
+import 'package:quizzly_math/services/extention/localization_ext.dart';
+import 'package:quizzly_math/views/quiz_widget/timer.dart';
 
 class QuizStat extends StatefulWidget {
   final QuizController controller;
 
-  const QuizStat({
-    super.key,
-    required this.controller,
-  });
+  const QuizStat({super.key, required this.controller});
 
   @override
   State<QuizStat> createState() => _QuizStatState();
@@ -24,8 +21,9 @@ class _QuizStatState extends State<QuizStat> {
       width: MediaQuery.of(context).size.width * .75,
       height: MediaQuery.of(context).size.height * .27,
       margin: EdgeInsets.only(
-          left: MediaQuery.of(context).size.width * .125,
-          top: MediaQuery.of(context).size.height * .07),
+        left: MediaQuery.of(context).size.width * .125,
+        top: MediaQuery.of(context).size.height * .01,
+      ),
       child: Stack(
         children: [
           Align(
@@ -41,7 +39,7 @@ class _QuizStatState extends State<QuizStat> {
                     color: AppColors.cFBECFF,
                     offset: const Offset(0, 4),
                     blurRadius: 4,
-                  )
+                  ),
                 ],
               ),
               child: Column(
